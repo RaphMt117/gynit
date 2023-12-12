@@ -1,23 +1,15 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 import chalkAnimation from "chalk-animation";
-import { existsSync } from "fs";
+import { existsSync, writeFile, copyFile } from "fs";
+import { type } from "os";
 
-let projectName, lang;
+let projectName, lang, readme;
 
 const sleep = (ms = 3500) => new Promise((r) => setTimeout(r, ms));
 
-async function verifyGit() {
-  if (existsSync(".git")) {
-    console.log("Already a git repository.");
-    process.exit(1);
-  } else {
-    await start();
-  }
-}
-
 async function start() {
-  const tittle = chalkAnimation.neon("Ginit");
+  const tittle = chalkAnimation.neon("\nGinit");
   await sleep();
 
   console.log(`
@@ -26,6 +18,15 @@ You will be asked about this project, and based
 on these responses, a README will be generated.
 `);
   tittle.stop();
+}
+
+async function verifyGit() {
+  if (existsSync(".git")) {
+    console.log("Already a git repository.");
+    process.exit(1);
+  } else {
+    await start();
+  }
 }
 
 async function askProjectName() {
@@ -46,7 +47,7 @@ async function askLanguage() {
     type: "list",
     message: "What language will be used in this project?",
     choices: [
-      "Javascript",
+      "Node.js",
       "Typescript",
       "Bash",
       "Go",
@@ -57,7 +58,28 @@ async function askLanguage() {
   lang = answer.language;
 }
 
+async function askReadme() {
+  const answer = await inquirer.prompt({
+    name: "readme",
+    type: "confirm",
+    message: "Would you like to create a README.md?",
+  });
+  readme = answer.readme;
+  if (readme == true) {
+    copyFile(`./content/${lang}-readme.md`, "README.md", (err) => {
+      if (err) {
+        console.log("Error while creating README: ", err);
+      } else {
+        console.log("README created.");
+      }
+    });
+  } else {
+    console.log("next step");
+  }
+}
+
 // await verifyGit();
 await start();
-await askProjectName();
+// await askProjectName();
 await askLanguage();
+await askReadme();
