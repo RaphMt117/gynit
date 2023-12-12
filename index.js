@@ -173,7 +173,7 @@ async function createProject() {
 async function createReadme() {
   if (readme == true) {
     switch (lang) {
-      case "Node":
+      case "Node.js":
         var readmeLang = `${readmeContent.Node}`;
         writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
           if (err) {
