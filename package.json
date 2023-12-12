@@ -1,18 +1,30 @@
 {
   "name": "ginit",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A better way to 'init' my projects.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RaphMt117/ginit"
   },
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "CLI",
+    "init",
+    "Project",
+    "Node.js"
+  ],
+  "author": "RaphMt117",
   "license": "ISC",
   "type": "module",
+  "bin": "./index.js",
   "dependencies": {
     "chalk": "^5.3.0",
     "chalk-animation": "^2.0.3",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2",
     "inquirer": "^8.2.6",
     "nanospinner": "^1.1.0"
   }
