@@ -1,11 +1,14 @@
 {
-  "name": "ginit",
-  "version": "0.0.1",
+  "name": "gynit",
+  "version": "0.0.7",
   "description": "A better way to 'init' my projects.",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/RaphMt117/ginit"
+  },
+  "bin": {
+    "gyinit": "./index.js"
   },
   "scripts": {
     "start": "node ."
@@ -19,7 +22,6 @@
   "author": "RaphMt117",
   "license": "ISC",
   "type": "module",
-  "bin": "./index.js",
   "dependencies": {
     "chalk": "^5.3.0",
     "chalk-animation": "^2.0.3",

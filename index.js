@@ -1,19 +1,20 @@
+#!/usr/bin/env node
+
 import inquirer from "inquirer";
 import chalk from "chalk";
-import chalkAnimation from "chalk-animation";
 import gradient from "gradient-string";
 import { createSpinner } from "nanospinner";
-import { mkdirSync, copyFile, appendFile } from "fs";
+import { mkdirSync, appendFile, writeFile } from "fs";
 import figlet from "figlet";
 
-import { mainMessage } from "./content/files/mainFiles.js";
+import { mainMessage, readmeContent } from "./content/mainContent.js";
 
 let projectName, lang, readme;
 
 const sleep = (ms = 2700) => new Promise((r) => setTimeout(r, ms));
 
 async function start() {
-  const msg = "Ginit";
+  const msg = "Gynit";
   figlet(
     msg,
     {
@@ -166,27 +167,71 @@ async function createProject() {
       );
       break;
   }
-  // Creating README based on users choice
-  if (readme == true) {
-    copyFile(
-      `./content/readmes/${lang}-readme.md`,
-      `${projectName}/README.md`,
-      (err) => {
-        if (err) {
-          console.log("Error while creating README: ", err);
-        } else {
-          spinner.success({
-            text: "README.md created.",
-          });
-        }
-      },
-    );
-  }
 }
 
+// Creating README based on users choice
+async function createReadme() {
+  if (readme == true) {
+    switch (lang) {
+      case "Node":
+        var readmeLang = `${readmeContent.Node}`;
+        writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
+          if (err) {
+            throw err;
+          }
+        });
+        break;
+      case "Typescript":
+        var readmeLang = `${readmeContent.Typescript}`;
+        writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
+          if (err) {
+            throw err;
+          }
+        });
+        break;
+      case "Bash":
+        var readmeLang = `${readmeContent.Bash}`;
+        writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
+          if (err) {
+            throw err;
+          }
+        });
+        break;
+      case "Go":
+        var readmeLang = `${readmeContent.Go}`;
+        writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
+          if (err) {
+            throw err;
+          }
+        });
+        break;
+      case "Other":
+        var readmeLang = `${readmeContent.Other}`;
+        writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
+          if (err) {
+            throw err;
+          }
+        });
+        break;
+
+      default:
+        writeFile(
+          `${projectName}/README.md`,
+          `Something went wrong here...`,
+          (err) => {
+            if (err) {
+              throw err;
+            }
+          },
+        );
+        break;
+    }
+  }
+}
 await start();
 await askProjectName();
 await askLanguage();
 await askReadme();
 
 await createProject();
+await createReadme();
