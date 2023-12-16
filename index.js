@@ -171,10 +171,11 @@ async function createProject() {
 
 // Creating README based on users choice
 async function createReadme() {
+  var readmeLang;
   if (readme == true) {
     switch (lang) {
       case "Node.js":
-        var readmeLang = `${readmeContent.Node}`;
+        readmeLang = `${readmeContent.Node}`;
         writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
           if (err) {
             throw err;
@@ -182,7 +183,7 @@ async function createReadme() {
         });
         break;
       case "Typescript":
-        var readmeLang = `${readmeContent.Typescript}`;
+        readmeLang = `${readmeContent.Typescript}`;
         writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
           if (err) {
             throw err;
@@ -190,7 +191,7 @@ async function createReadme() {
         });
         break;
       case "Bash":
-        var readmeLang = `${readmeContent.Bash}`;
+        readmeLang = `${readmeContent.Bash}`;
         writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
           if (err) {
             throw err;
@@ -198,7 +199,7 @@ async function createReadme() {
         });
         break;
       case "Go":
-        var readmeLang = `${readmeContent.Go}`;
+        readmeLang = `${readmeContent.Go}`;
         writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
           if (err) {
             throw err;
@@ -206,7 +207,7 @@ async function createReadme() {
         });
         break;
       case "Other":
-        var readmeLang = `${readmeContent.Other}`;
+        readmeLang = `${readmeContent.Other}`;
         writeFile(`${projectName}/README.md`, `${readmeLang}`, (err) => {
           if (err) {
             throw err;

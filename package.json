@@ -29,5 +29,8 @@
     "gradient-string": "^2.0.2",
     "inquirer": "^8.2.6",
     "nanospinner": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
   }
 }
