@@ -1,33 +1,58 @@
-# Welcome to Gynit
+<div align="center">
+  <img src="assets/gynit-logo.png" width="400" alt="Logo"/><br/>
+  <!-- <h1 align="center"> -->
+  <!--   Gynit -->
+  <!-- </h1> -->
+</div>
 
-Gynit is a tool to help in the first steps of every new project.
+<p align="center">
+  <!-- Badges from [Shields.io](https://img.shields.io/)  -->
+  <a href="https://github.com/{user}/{project}"><img src="https://img.shields.io/github/languages/top/{user}/{project}?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+  <a href="https://github.com/{user}/{project}"><img src="https://img.shields.io/github/repo-size/{user}/{project}?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+  <a href="https://github.com/{user}/{project}/commits"><img src="https://img.shields.io/github/commit-activity/m/{user}/{project}?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+</p>
 
-### Usage
+## What is it?
 
-You can use Gynit in your terminal:
+- Gynit is a tool to help in the first steps of every new project.
+- Based in some questions about your project, a template will be created
+  with the basic files for the language of your choice, and a Custom README
+  to start with.
 
-```shell
+## Showcase
+
+<p align="center">
+  <img src="assets/gynitPrompt.jpg"/>
+</p>
+
+## Usage
+
+1. Make sure you have node.js installed:
+
+```bash
+node --version
+```
+
+2. Run the following command:
+
+```bash
 npx gynit
 ```
 
-### Currently available languages
+> [NPX](https://www.npmjs.com/package/npx) allows you to run and use packages without having to install them locally or globally.
+
+## Currently available languages
 
 - Node.js
 - Typescript
 - Go
 - Bash
 
-### Currently available features
+## Currently available features
 
 - Create a custom README based on the language of your choice
 
-### Next steps
-
-- Finish the template README for each language.
-- Option to `git init` in the act of creation.
-- Add more languages
-
-#### Modules used in this project:
+## Modules used in this project
 
 - [inquirer](https://www.npmjs.com/package/inquirer)
 - [figlet](https://www.npmjs.com/package/figlet)
@@ -35,3 +60,9 @@ npx gynit
 - [chalk-animation](https://www.npmjs.com/package/chalk-animation)
 - [nanospinner](https://www.npmjs.com/package/nanospinner)
 - [gradient-string](https://www.npmjs.com/package/gradient-string)
+
+### Next steps
+
+- Finish the template README for each language.
+- Option to `git init` in the act of creation.
+- Add more languages
