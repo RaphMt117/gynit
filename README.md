@@ -7,9 +7,9 @@
 
 <p align="center">
   <!-- Badges from [Shields.io](https://img.shields.io/)  -->
-  <a href="https://github.com/{user}/{project}"><img src="https://img.shields.io/github/languages/top/{user}/{project}?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-  <a href="https://github.com/{user}/{project}"><img src="https://img.shields.io/github/repo-size/{user}/{project}?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-  <a href="https://github.com/{user}/{project}/commits"><img src="https://img.shields.io/github/commit-activity/m/{user}/{project}?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+  <a href="https://github.com/RaphMt117/gynit"><img src="https://img.shields.io/github/languages/top/RaphMt117/gynit?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+  <a href="https://github.com/RaphMt117/gynit"><img src="https://img.shields.io/github/repo-size/RaphMt117/gynit?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+  <a href="https://github.com/RaphMt117/gynit/commits"><img src="https://img.shields.io/github/commit-activity/m/RaphMt117/gynit?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 ## What is it?
