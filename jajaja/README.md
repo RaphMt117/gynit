@@ -1,18 +1,4 @@
-export const mainMessage = {
-  Node: `console.log("Hello, world!")`,
-  Typescript: "Hello typescript",
-  Bash: "#!/usr/bin/env bash",
-  Go: `package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, world.")
-}`,
-};
-
-export const readmeContent = {
-  Node: `<div align="center">
+<div align="center">
   <img src="https://cdn.svgporn.com/logos/nodejs.svg" width="100" alt="Logo"/><br/>
   <h1 align="center">
     projectName
@@ -42,15 +28,15 @@ export const readmeContent = {
 
 1. Make sure you have node.js installed:
 
-\`\`\`bash
+```bash
 node --version
-\`\`\`
+```
 
 2. Run the following command:
 
-\`\`\`bash
+```bash
 npx { projectName }
-\`\`\`
+```
 
 > NPX allows you to run and use packages without having to install them locally or globally.
 > You can learn more [here](https://www.npmjs.com/package/npx)
@@ -65,7 +51,7 @@ npx { projectName }
 
 ## 🙋 FAQ
 
-<!-- - Q: **"What is \`npx\`?"** -->
+<!-- - Q: **"What is `npx`?"** -->
 
   <!-- NPX is a tool included in NPM, and allows you to run and use packages without needing to locally or globally install them. -->
   <!-- If a package is installed while running NPM executables with NPX, NPX will look for the package binaries (either locally or globally) and then run the package. -->
@@ -74,19 +60,3 @@ npx { projectName }
 &nbsp;
 
 <p align="center"><a href="https://github.com/path/to/license"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message={license}&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a></p>
-
-`,
-  Typescript: `# Typescript Readme Template
-
-some content lalala
-`,
-  Bash: `# Bash Readme Template
-
-some content lalala
-`,
-  Go: `# Go Readme Template
-
-some content lalala
-`,
-  Other: `Default README content`,
-};
