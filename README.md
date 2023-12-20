@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/gynit-logo.png" width="400" alt="Logo"/><br/>
+  <img src="assets/gynit/gynit-logo.png" width="400" alt="Logo"/><br/>
   <!-- <h1 align="center"> -->
   <!--   Gynit -->
   <!-- </h1> -->
@@ -22,7 +22,7 @@
 ## Showcase
 
 <p align="center">
-  <img src="assets/gynitPrompt.jpg"/>
+  <img src="assets/gynit/gynitPrompt.jpg"/>
 </p>
 
 ## Usage
