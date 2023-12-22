@@ -7,7 +7,7 @@ import { createSpinner } from "nanospinner";
 import { mkdirSync, appendFile, writeFile } from "fs";
 import figlet from "figlet";
 
-import { mainMessage, readmeContent } from "./content/mainContent.js";
+import { mainMessage, readmeContent, langs } from "./content/mainContent.js";
 
 let projectName, lang, readme;
 

@@ -1,3 +1,5 @@
+export const langs = ["Node", "Typescript", "Bash", "Go"];
+
 export const mainMessage = {
   Node: `console.log("Hello, world!")`,
   Typescript: "Hello typescript",

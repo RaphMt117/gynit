@@ -55,7 +55,7 @@
 
 - Create a custom README based on the language of your choice
 
-## Modules used in this project
+## Dependencies
 
 - [inquirer](https://www.npmjs.com/package/inquirer)
 - [figlet](https://www.npmjs.com/package/figlet)
