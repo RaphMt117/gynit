@@ -67,5 +67,9 @@
 ### Next steps
 
 - Finish the template README for each language.
-- Option to `git init` in the act of creation.
 - Add more languages
+- Add .gitignore template for each lang
+
+### Done
+
+- Option to `git init` in the act of creation.

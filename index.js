@@ -8,7 +8,11 @@ import { mkdirSync, appendFile, writeFile } from "fs";
 import figlet from "figlet";
 import { exec } from "child_process";
 
-import { mainMessage, readmeContent } from "./content/mainContent.js";
+import {
+  mainMessage,
+  readmeContent,
+  gitignoreContent,
+} from "./content/mainContent.js";
 
 let projectName, lang, readme;
 
@@ -82,7 +86,7 @@ async function askReadme() {
 }
 
 async function createProject() {
-  const spinner = createSpinner("Putting your files together...").start();
+  const spinner = createSpinner("Putting your files together...\n").start();
 
   // Creating project folder and main file for each language
   switch (lang) {
@@ -233,12 +237,67 @@ async function createReadme() {
 
 // create a git repository
 async function createGit() {
+  var gitIgnoreLang = null;
   exec(`git init ./${projectName}`, (err) => {
     if (err) {
-      console.error("could not execute command: ", err);
+      console.error("Error while creating git repository: ", err);
       return;
     }
   });
+  switch (lang) {
+    case "Node.js":
+      gitIgnoreLang = `${gitignoreContent.Node}`;
+      writeFile(`${projectName}/.gitignore`, `${gitIgnoreLang}`, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+      break;
+    case "Typescript":
+      gitIgnoreLang = `${gitignoreContent.Typescript}`;
+      writeFile(`${projectName}/.gitignore`, `${gitIgnoreLang}`, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+      break;
+    case "Bash":
+      gitIgnoreLang = `${gitignoreContent.Bash}`;
+      writeFile(`${projectName}/.gitignore`, `${gitIgnoreLang}`, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+      break;
+    case "Go":
+      gitIgnoreLang = `${gitignoreContent.Go}`;
+      writeFile(`${projectName}/.gitignore`, `${gitIgnoreLang}`, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+      break;
+    case "Other":
+      gitIgnoreLang = `${gitignoreContent.Bash}`;
+      writeFile(`${projectName}/.gitignore`, `${gitIgnoreLang}`, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
+      break;
+
+    default:
+      writeFile(
+        `${projectName}/.gitignore`,
+        `Something went wrong here...`,
+        (err) => {
+          if (err) {
+            throw err;
+          }
+        },
+      );
+      break;
+  }
 }
 
 await start();
