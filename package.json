@@ -1,6 +1,6 @@
 {
   "name": "gynit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A better way to 'init' my projects.",
   "main": "index.js",
   "repository": {

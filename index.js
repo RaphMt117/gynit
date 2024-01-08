@@ -6,8 +6,9 @@ import gradient from "gradient-string";
 import { createSpinner } from "nanospinner";
 import { mkdirSync, appendFile, writeFile } from "fs";
 import figlet from "figlet";
+import { exec } from "child_process";
 
-import { mainMessage, readmeContent, langs } from "./content/mainContent.js";
+import { mainMessage, readmeContent } from "./content/mainContent.js";
 
 let projectName, lang, readme;
 
@@ -229,6 +230,17 @@ async function createReadme() {
     }
   }
 }
+
+// create a git repository
+async function createGit() {
+  exec(`git init ./${projectName}`, (err) => {
+    if (err) {
+      console.error("could not execute command: ", err);
+      return;
+    }
+  });
+}
+
 await start();
 await askProjectName();
 await askLanguage();
@@ -236,3 +248,4 @@ await askReadme();
 
 await createProject();
 await createReadme();
+await createGit();
